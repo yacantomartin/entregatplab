@@ -1,0 +1,28 @@
+# Project: ejercicio26
+# Makefile created by Dev-C++ 5.9.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ejercicio26.o
+LINKOBJ  = ejercicio26.o
+LIBS     = -g -g3
+INCS     = 
+CXXINCS  = 
+BIN      = ejercicio26.exe
+CXXFLAGS = $(CXXINCS) -g3 -g
+CFLAGS   = $(INCS) -g3 -g
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+ejercicio26.o: ejercicio26.c
+	$(CC) -c ejercicio26.c -o ejercicio26.o $(CFLAGS)

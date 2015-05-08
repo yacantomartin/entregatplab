@@ -1,0 +1,28 @@
+# Project: Proyecto1
+# Makefile created by Dev-C++ 5.9.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "main.c\ 8.o"
+LINKOBJ  = "main.c 8.o"
+LIBS     = -g
+INCS     = 
+CXXINCS  = 
+BIN      = Proyecto1.exe
+CXXFLAGS = $(CXXINCS) -g
+CFLAGS   = $(INCS) -g
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"main.c\ 8.o": main.c\ 8.c
+	$(CC) -c "main.c 8.c" -o "main.c 8.o" $(CFLAGS)

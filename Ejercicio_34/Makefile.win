@@ -1,0 +1,28 @@
+# Project: Ejercicio34
+# Makefile created by Dev-C++ 5.9.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Ejercicio_34/main.o
+LINKOBJ  = Ejercicio_34/main.o
+LIBS     = -g -g3
+INCS     = 
+CXXINCS  = 
+BIN      = Ejercicio34.exe
+CXXFLAGS = $(CXXINCS) -g3 -g
+CFLAGS   = $(INCS) -g3 -g
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Ejercicio_34/main.o: Ejercicio_34/main.c
+	$(CC) -c Ejercicio_34/main.c -o Ejercicio_34/main.o $(CFLAGS)
